@@ -4,14 +4,19 @@
 
 Проект без использования Create React App. Настроена работа с css-модулями. Бандл разделен на чанки (React.lazy). Добавлена возможность смены темы (React Context, css-variables, custom hook useTheme). Добавлена helper-функция для работы с классами.
 
-<details><summary>Применен Feature-Sliced Design</summary>app
-pages
-widgets
-feautures
-entities
-shared</details>
+<details><summary>Применен Feature-Sliced Design</summary>
+app - router, ThemeProvider, styles, types
 
-<br/>
+pages - AboutPage, MainPage
+
+widgets - Navbar
+
+feautures
+
+entities
+
+shared - AppLink, classNames
+</details>
 
 #### Технологии
 
