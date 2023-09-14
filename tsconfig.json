@@ -3,7 +3,10 @@
     "outDir": "./dist/",
     "noImplicitAny": true,
     "module": "ESNext", 
-    // "baseUrl": ".",
+    "baseUrl": ".",
+    "paths": {
+      "*":["./src/*"]
+    },
     // "module": "es6",
     "target": "es5",
     "jsx": "react-jsx",
