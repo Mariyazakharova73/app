@@ -2,20 +2,21 @@
 
 #### О проекте
 
-Проект без использования Create React App. Настроена работа с css-модулями. Бандл разделен на чанки (React.lazy). Добавлена возможность смены темы (React Context, css-variables, custom hook useTheme). Добавлена helper-функция для работы с классами.
+Проект без использования Create React App. Настроена работа с css-модулями. Бандл разделен на чанки (React.lazy). Добавлена возможность смены темы (React Context, css-variables, custom hook useTheme). Добавлена helper-функция для работы с классами. Реализована возможность смены языка (i18next).
 
 <details><summary>Применен Feature-Sliced Design</summary>
 app - router, ThemeProvider, styles, types
 
 pages - AboutPage, MainPage
 
-widgets - Navbar
+widgets - Navbar, SideBar, ThemeSwitcher, LanguageSwitcher
 
 feautures
 
 entities
 
-shared - AppLink, classNames
+shared - AppLink, classNames, assets, config i18next, routeConfig
+
 </details>
 
 #### Технологии
