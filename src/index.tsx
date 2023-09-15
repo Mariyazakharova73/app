@@ -6,7 +6,6 @@ import ThemeProvider from "./app/providers/ThemeProvider/ui/ThemeProvider";
 import "shared/config/i18n/i18n";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-const element = <h1>Hello, world</h1>;
 
 root.render(
   <BrowserRouter>
