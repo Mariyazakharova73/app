@@ -1,3 +1,6 @@
 {
-  "language": "language"
+  "error": "error",
+  "language": "language",
+  "not-found": "not-found",
+  "update-page": "update-page"
 }

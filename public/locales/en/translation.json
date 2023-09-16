@@ -1,5 +1,8 @@
 {
   "title": "TEST english",
   "language": "English",
-  "name": "name"
+  "name": "name",
+  "not-found": "Page not found",
+  "error": "An unexpected error occurred",
+  "update-page": "\nRefresh the page"
 }

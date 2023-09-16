@@ -66,6 +66,7 @@ module.exports = {
       },
     ],
     'i18n/no-russian-character': 0,
+    // комментарии могут быть длинной строкой записаны
     'max-len': ['error', { ignoreComments: true, code: 100 }],
     'react/react-in-jsx-scope': 'off',
     // импорт FC
