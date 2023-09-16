@@ -57,6 +57,7 @@ module.exports = {
     'import/no-extraneous-dependencies': 'warn',
     // запрет нижних подчеркиваний
     'no-underscore-dangle': 'off',
+    // j=отсутствие перевода у текста
     'i18next/no-literal-string': [
       'error',
       {
