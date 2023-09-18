@@ -4,11 +4,7 @@ module.exports = {
     es2021: true,
     jest: true,
   },
-  extends: [
-    'plugin:react/recommended',
-    'standard-with-typescript',
-    'plugin:i18n/recommended',
-  ],
+  extends: ['plugin:react/recommended', 'standard-with-typescript', 'plugin:i18n/recommended', 'plugin:storybook/recommended'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
@@ -55,7 +51,7 @@ module.exports = {
       {
         markupOnly: true,
         // переводы у атрибута для тестирования data-testid
-        ignoreAttribute: ['data-testid'],
+        ignoreAttribute: ['data-testid', 'to'],
       },
     ],
     // отменяем предупреждения о переводах для тестовых файлов
