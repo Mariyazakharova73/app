@@ -3,6 +3,9 @@
  * https://jestjs.io/docs/configuration
  */
 
+ // eslint-disable-next-line @typescript-eslint/no-var-requires
+ const path = require('path')
+
 /** @type {import('jest').Config} */
 const config = {
   clearMocks: true,
@@ -24,6 +27,11 @@ const config = {
   ],
   rootDir: '../../',
   testMatch: ['<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)'],
+  setupFilesAfterEnv: ['<rootDir>config/jest/jest-setup.ts'],
+  moduleNameMapper: {
+    '\\.s?css$': 'identity-obj-proxy',
+    '\\.svg$': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
+  },
 
   // All imported modules in your tests should be mocked automatically
   // automock: false,
