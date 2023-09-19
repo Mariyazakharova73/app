@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState } from 'react'
+import React, { type FC, useEffect, useState } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
 import Button from 'shared/ui/Button/Button'
 

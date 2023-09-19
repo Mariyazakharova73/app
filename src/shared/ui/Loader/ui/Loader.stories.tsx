@@ -8,8 +8,8 @@ const meta = {
   component: Loader,
 
   argTypes: {
-    backgroundColor: { control: 'color' },
-  },
+    backgroundColor: { control: 'color' }
+  }
 } as Meta<typeof Loader>
 
 export default meta
@@ -17,13 +17,13 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const Light: Story = {
-  args: {},
+  args: {}
 }
 
 Light.decorators = [ThemeDecorator(Theme.LIGHT)]
 
 export const Dark: Story = {
-  args: {},
+  args: {}
 }
 
 Light.decorators = [ThemeDecorator(Theme.DARK)]

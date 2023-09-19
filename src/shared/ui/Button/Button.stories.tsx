@@ -9,8 +9,8 @@ const meta = {
   component: Button,
 
   argTypes: {
-    backgroundColor: { control: 'color' },
-  },
+    backgroundColor: { control: 'color' }
+  }
 } as Meta<typeof Button>
 
 export default meta
@@ -19,28 +19,28 @@ type Story = StoryObj<typeof meta>
 
 export const Primary: Story = {
   args: {
-    children: 'Button',
-  },
+    children: 'Button'
+  }
 }
 
 export const PrimaryDark: Story = {
   args: {
-    children: 'Button',
-  },
+    children: 'Button'
+  }
 }
 
-PrimaryDark.decorators=[ThemeDecorator(Theme.DARK)]
+PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)]
 
 export const Clear: Story = {
   args: {
     children: 'Button',
-    theme: ThemeButton.CLEAR,
-  },
+    theme: ThemeButton.CLEAR
+  }
 }
 
 export const Outlined: Story = {
   args: {
     children: 'Button',
-    theme: ThemeButton.OUTLINE,
-  },
+    theme: ThemeButton.OUTLINE
+  }
 }

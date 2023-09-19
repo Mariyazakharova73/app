@@ -9,7 +9,7 @@ const meta = {
   component: AppLink,
 
   argTypes: {
-    backgroundColor: { control: 'color' },
+    backgroundColor: { control: 'color' }
   },
   args: {
     to: '/'
@@ -21,21 +21,21 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const Primary: Story = {
-  args: { children: 'text', theme: AppLinkTheme.PRIMARY },
+  args: { children: 'text', theme: AppLinkTheme.PRIMARY }
 }
 
 export const Secondary: Story = {
-  args: { children: 'text', theme: AppLinkTheme.SECONDARY },
+  args: { children: 'text', theme: AppLinkTheme.SECONDARY }
 }
 
 export const PrimaryDark: Story = {
-  args: { children: 'text', theme: AppLinkTheme.PRIMARY },
+  args: { children: 'text', theme: AppLinkTheme.PRIMARY }
 }
 
 PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)]
 
 export const SecondaryDark: Story = {
-  args: { children: 'text', theme: AppLinkTheme.SECONDARY },
+  args: { children: 'text', theme: AppLinkTheme.SECONDARY }
 }
 
 SecondaryDark.decorators = [ThemeDecorator(Theme.DARK)]
