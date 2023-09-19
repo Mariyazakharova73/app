@@ -70,7 +70,7 @@ module.exports = {
     ],
     'i18n/no-russian-character': 0,
     // комментарии могут быть длинной строкой записаны
-    'max-len': ['error', { ignoreComments: true, code: 100 }],
+    'max-len': ['warn', { ignoreComments: true, code: 100 }],
     'react/react-in-jsx-scope': 'off',
     // импорт FC
     '@typescript-eslint/consistent-type-imports': 'warn',
@@ -83,13 +83,16 @@ module.exports = {
     '@typescript-eslint/no-unused-vars': 'warn',
     '@typescript-eslint/naming-convention': 'warn',
     '@typescript-eslint/no-misused-promises': 'warn',
+    "@typescript-eslint/consistent-type-assertions": "off",
+    // запятые в конце строки
+    "@typescript-eslint/comma-dangle": "off"
   },
   globals: {
     __IS_DEV__: true,
   },
-  settings: {
-    react: {
-     version: "detect",
-    },
-  },
+  // settings: {
+  //   react: {
+  //    version: "detect",
+  //   },
+  // },
 }

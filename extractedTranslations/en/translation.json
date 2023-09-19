@@ -1,6 +1,10 @@
 {
+  "about": "",
   "error": "error",
   "language": "language",
+  "main": "",
   "not-found": "not-found",
-  "update-page": "update-page"
+  "toggle": "toggle",
+  "update-page": "update-page",
+  "Главная": ""
 }

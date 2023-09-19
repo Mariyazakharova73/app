@@ -1,9 +1,12 @@
 {
   "title": "TEST english",
   "language": "English",
+  "ln": "En",
   "name": "name",
   "not-found": "Page not found",
   "error": "An unexpected error occurred",
   "update-page": "\nRefresh the page",
-  "toggle": "Toggle"
+  "toggle": "Toggle",
+  "about": "About Page",
+  "main": "Main Page"
 }
