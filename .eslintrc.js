@@ -85,7 +85,9 @@ module.exports = {
     '@typescript-eslint/no-misused-promises': 'warn',
     "@typescript-eslint/consistent-type-assertions": "off",
     // запятые в конце строки
-    "@typescript-eslint/comma-dangle": "off"
+    "@typescript-eslint/comma-dangle": "off",
+     // точка с запятой в конце строки
+    "@typescript-eslint/member-delimiter-style": "off"
   },
   globals: {
     __IS_DEV__: true,
