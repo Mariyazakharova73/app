@@ -2,30 +2,22 @@
   "compilerOptions": {
     "outDir": "./dist/",
     "noImplicitAny": true,
-    "module": "ESNext", 
-    "baseUrl": ".",
-    "paths": {
-      "*":["./src/*"]
-    },
-    // "module": "es6",
+    "module": "ESNext",
     "target": "es5",
     "jsx": "react-jsx",
     "allowJs": true,
+    "baseUrl": ".",
+    "paths": {
+      "*": ["./src/*"]
+    },
     "moduleResolution": "node",
-    // import без * as
-    "allowSyntheticDefaultImports": true,
-    // import вместо require
     "esModuleInterop": true,
-  }
-  ,
+    "allowSyntheticDefaultImports": true
+  },
   "ts-node": {
     "compilerOptions": {
       "module": "CommonJS"
     }
   },
-  "include": [
-    "./config/jest/jest-setup.ts",
-    "./src/**/*.ts",
-    "./src/**/*.tsx",
-  ]
+  "include": ["./config/jest/jest-setup.ts", "./src/**/*.ts", "./src/**/*.tsx"]
 }

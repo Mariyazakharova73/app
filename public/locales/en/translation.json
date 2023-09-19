@@ -4,5 +4,6 @@
   "name": "name",
   "not-found": "Page not found",
   "error": "An unexpected error occurred",
-  "update-page": "\nRefresh the page"
+  "update-page": "\nRefresh the page",
+  "toggle": "Toggle"
 }
