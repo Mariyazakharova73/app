@@ -1,5 +1,5 @@
-import React, { type FC, Suspense, useEffect } from 'react'
-import './styles/index.scss'
+/* eslint-disable i18next/no-literal-string */
+import React, { type FC, Suspense } from 'react'
 import { useTheme } from 'app/providers/ThemeProvider/lib/useTheme'
 import { classNames } from 'shared/lib/classNames/classNames'
 import AppRouter from 'app/providers/router/ui/AppRouter'
@@ -13,6 +13,7 @@ const App: FC = () => {
     <div className={classNames('app', {}, [theme])}>
       <Suspense fallback={<div>Loading...</div>}>
         <Navbar />
+
         <div className='content-page'>
           <Sidebar />
           <AppRouter />

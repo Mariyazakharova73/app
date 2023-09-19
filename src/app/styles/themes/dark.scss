@@ -1,8 +1,17 @@
 .app.dark {
-  --bg-color: #86AFA7;
-  --inverted-bg-color: #FACBB0;
-  --primary-color: #2F4F52; // акцентный цвет
-  --secondary-color: #AC9699; // неакцентный
-  --inverted-primary-color: #9B4454; 
-  --inverted-secondary-color: #B4836D;
+  --bg-color: #20232a;
+  --inverted-bg-color: #fafafa;
+  --primary-color: #536dfe; 
+  --secondary-color: #f50057; 
+  --inverted-primary-color: #268f1d;
+  --inverted-secondary-color: #86f874;
+}
+
+.dark {
+  --bg-color: #20232a;
+  --inverted-bg-color: #fafafa;
+  --primary-color: #536dfe; 
+  --secondary-color: #f50057; 
+  --inverted-primary-color: #268f1d;
+  --inverted-secondary-color: #86f874;
 }

@@ -10,12 +10,15 @@ module.exports = {
     'plugin:i18n/recommended',
     'plugin:storybook/recommended',
   ],
-  // отменяем предупреждения о переводах для тестовых файлов
+  //  для тестовых файлов и stories:
   overrides: [
     {
-      files: ['**/src/**/*.test.{ts,tsx}'],
+      files: ['**/src/**/*.{test,stories}.{ts,tsx}'],
       rules: {
+        // отменяем предупреждения о переводах 
         'i18next/no-literal-string': 'off',
+        // отменяем максимальную длину строки
+        'max-len': 'off'
       },
     },
   ],
@@ -28,7 +31,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['react', '@typescript-eslint', 'i18next'],
+  plugins: ['react', '@typescript-eslint', 'i18next', 'react-hooks'],
   rules: {
     'react/jsx-filename-extension': [
       2,
@@ -71,6 +74,10 @@ module.exports = {
     'i18n/no-russian-character': 0,
     // комментарии могут быть длинной строкой записаны
     'max-len': ['warn', { ignoreComments: true, code: 100 }],
+    "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
+    "react-hooks/exhaustive-deps": "warn" ,// Checks effect dependencies
+
+    
     'react/react-in-jsx-scope': 'off',
     // импорт FC
     '@typescript-eslint/consistent-type-imports': 'warn',
@@ -92,9 +99,4 @@ module.exports = {
   globals: {
     __IS_DEV__: true,
   },
-  // settings: {
-  //   react: {
-  //    version: "detect",
-  //   },
-  // },
 }

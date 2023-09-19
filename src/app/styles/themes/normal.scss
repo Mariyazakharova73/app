@@ -1,8 +1,18 @@
 .app.light {
-  --bg-color: #FACBB0;
-  --inverted-bg-color: #86AFA7;
-  --primary-color: #9B4454; // акцентный цвет
-  --secondary-color: #B4836D; // неакцентный
-  --inverted-primary-color: #2F4F52;
-  --inverted-secondary-color: #AC9699;
+  --bg-color: #fafafa;
+  --inverted-bg-color: #20232a;
+  --primary-color: #268f1d;
+  --secondary-color: #86f874;
+  --inverted-primary-color: #536dfe; 
+  --inverted-secondary-color: #f50057; 
+  
+}
+
+.light {
+  --bg-color: #fafafa;
+  --inverted-bg-color: #20232a;
+  --primary-color: #268f1d;
+  --secondary-color: #86f874;
+  --inverted-primary-color: #536dfe; 
+  --inverted-secondary-color: #f50057; 
 }
