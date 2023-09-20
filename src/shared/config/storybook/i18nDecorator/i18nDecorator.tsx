@@ -4,7 +4,7 @@ import LanguageDetector from 'i18next-browser-languagedetector'
 import React, { Suspense } from 'react'
 import { I18nextProvider } from 'react-i18next'
 
-i18n
+void i18n
   .use(Backend) // lazy loads translations from /public/locales
   .use(LanguageDetector) // detect user language
   .init({

@@ -2,7 +2,7 @@ import React, {
   type FC,
   type InputHTMLAttributes,
   memo,
-  ChangeEvent,
+  type ChangeEvent,
   useEffect,
   useRef,
 } from 'react'
@@ -10,8 +10,8 @@ import { classNames } from 'shared/lib/classNames/classNames'
 import cls from './Input.module.scss'
 
 type HTMLInputProps = Omit<
-  InputHTMLAttributes<HTMLInputElement>,
-  'value' | 'onChange'
+InputHTMLAttributes<HTMLInputElement>,
+'value' | 'onChange'
 >
 
 export interface InputProps extends HTMLInputProps {

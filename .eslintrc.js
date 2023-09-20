@@ -30,6 +30,8 @@ module.exports = {
     },
     ecmaVersion: 'latest',
     sourceType: 'module',
+    "project": "./tsconfig.json",
+    "warnOnUnsupportedTypeScriptVersion": false
   },
   plugins: ['react', '@typescript-eslint', 'i18next', 'react-hooks'],
   rules: {
@@ -83,10 +85,10 @@ module.exports = {
     'react/react-in-jsx-scope': 'off',
     // импорт FC
     '@typescript-eslint/consistent-type-imports': 'warn',
-    // импорт React
-    '@typescript-eslint/prefer-nullish-coalescing': 'warn',
-    // импорт React
-    '@typescript-eslint/strict-boolean-expressions': 'warn',
+    // импорт React ??
+    '@typescript-eslint/prefer-nullish-coalescing': 'off',
+    // импорт React ??
+    '@typescript-eslint/strict-boolean-expressions': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
     // неиспользуеме переменные
     '@typescript-eslint/no-unused-vars': 'warn',

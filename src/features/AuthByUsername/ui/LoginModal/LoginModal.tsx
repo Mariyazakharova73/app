@@ -1,8 +1,8 @@
-import React, { FC } from 'react'
+import React, { type FC } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
 import { Modal } from 'shared/ui/Modal'
 import LoginForm from '../LoginForm/LoginForm'
-import cls from './LoginModal.module.scss'
+// import cls from './LoginModal.module.scss'
 
 export interface LoginModalProps {
   className?: string
@@ -13,7 +13,7 @@ export interface LoginModalProps {
 const LoginModal: FC<LoginModalProps> = ({ className, isOpen, onClose }) => {
   return (
     <Modal
-      className={classNames(cls.LoginModal, {}, [className])}
+      className={classNames('', {}, [className])}
       isOpen={isOpen}
       onClose={onClose}
       // модальное окно появяется в DOM только в момент открытия

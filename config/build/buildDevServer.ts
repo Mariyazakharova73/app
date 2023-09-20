@@ -1,7 +1,7 @@
 import type { Configuration as DevServerConfiguration } from 'webpack-dev-server'
-import { BuildOptions } from './types/config'
+import { type BuildOptions } from './types/config'
 
-export function buildDevServer(options: BuildOptions): DevServerConfiguration {
+export function buildDevServer (options: BuildOptions): DevServerConfiguration {
   return {
     port: options.port,
     // автоматически открывать браузер с приложением

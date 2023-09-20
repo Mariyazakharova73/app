@@ -4,7 +4,7 @@ import HtmlWebpackPlugin from 'html-webpack-plugin'
 import { type BuildOptions } from './types/config'
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
 
-export function buildPlugins({
+export function buildPlugins ({
   paths,
   isDev,
 }: BuildOptions): webpack.WebpackPluginInstance[] {
