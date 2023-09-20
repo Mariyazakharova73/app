@@ -12,11 +12,11 @@ pages - AboutPage, MainPage
 
 widgets - Navbar, SideBar, ThemeSwitcher, LanguageSwitcher, PageLoader
 
-feautures
+feautures - AuthByUsername
 
-entities
+entities - User
 
-shared - AppLink, classNames, assets, config i18next, routeConfig, Loader
+shared - AppLink, classNames, assets, config i18next, routeConfig, Loader, Button, Modal, Portal
 
 </details>
 

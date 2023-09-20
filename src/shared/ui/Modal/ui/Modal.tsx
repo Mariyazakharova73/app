@@ -16,14 +16,21 @@ export interface ModalProps {
   children?: ReactNode
   isOpen?: boolean
   onClose?: () => void
+  lazy?: boolean
 }
 
 const ANIMATION_DELAY = 300
 
-const Modal: FC<ModalProps> = ({ className, children, isOpen, onClose }) => {
+const Modal: FC<ModalProps> = ({
+  className,
+  children,
+  isOpen,
+  onClose,
+  lazy,
+}) => {
   const [isClosing, setIsClosing] = useState(false)
+  const [isMounted, setIsMounted] = useState(false)
   const timerRef = useRef<ReturnType<typeof setTimeout>>()
-  const { theme } = useTheme()
 
   const closeHandler = useCallback(() => {
     setIsClosing(true)
@@ -49,6 +56,16 @@ const Modal: FC<ModalProps> = ({ className, children, isOpen, onClose }) => {
   )
 
   useEffect(() => {
+    // модалка появляется в DOM
+    if (isOpen) {
+      setIsMounted(true)
+    }
+    return () => {
+      setIsMounted(false)
+    }
+  }, [isOpen])
+
+  useEffect(() => {
     if (isOpen) {
       window.addEventListener('keydown', onKeyDown)
     }
@@ -62,9 +79,14 @@ const Modal: FC<ModalProps> = ({ className, children, isOpen, onClose }) => {
     [cls.opened]: isOpen,
     [cls.isClosing]: isClosing,
   }
+
+  if (lazy && !isMounted) {
+    return null
+  }
+
   return (
     <Portal>
-      <div className={classNames(cls.Modal, mods, [className, theme])}>
+      <div className={classNames(cls.Modal, mods, [className])}>
         <div className={cls.overlay} onClick={closeHandler}>
           <div className={cls.content} onClick={onContentClick}>
             {children}

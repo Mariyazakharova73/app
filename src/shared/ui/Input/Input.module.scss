@@ -1,0 +1,15 @@
+.InputWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.placeholder {
+  margin-right: 5px;
+}
+
+.input {
+  background: transparent;
+  border-color: var(--inverted-primary-color);
+  outline-color: var(--inverted-primary-color);
+  caret-color: var(--inverted-primary-color);
+}

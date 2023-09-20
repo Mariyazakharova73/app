@@ -1,5 +1,5 @@
 import React from 'react'
-import { fireEvent, screen } from '@testing-library/react'
+import { screen } from '@testing-library/react'
 import { componetRender } from 'shared/lib/tests/componetRender/componetRender'
 import Counter from './Counter'
 import userEvent from '@testing-library/user-event'
@@ -20,7 +20,7 @@ describe('Counter', () => {
         counter: { value: 10 },
       },
     })
-     await userEvent.click(screen.getByTestId('inc-btn'))
+    await userEvent.click(screen.getByTestId('inc-btn'))
     expect(screen.getByTestId('value-title')).toHaveTextContent('11')
   })
 

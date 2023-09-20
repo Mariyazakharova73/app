@@ -9,5 +9,7 @@
   "toggle": "Toggle",
   "about": "About Page",
   "main": "Main Page",
-  "enter": "Login"
+  "enter": "Login",
+  "username": "\nEnter your username",
+  "password": "Enter password"
 }
