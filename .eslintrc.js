@@ -15,10 +15,10 @@ module.exports = {
     {
       files: ['**/src/**/*.{test,stories}.{ts,tsx}'],
       rules: {
-        // отменяем предупреждения о переводах 
+        // отменяем предупреждения о переводах
         'i18next/no-literal-string': 'off',
         // отменяем максимальную длину строки
-        'max-len': 'off'
+        'max-len': 'off',
       },
     },
   ],
@@ -74,10 +74,12 @@ module.exports = {
     'i18n/no-russian-character': 0,
     // комментарии могут быть длинной строкой записаны
     'max-len': ['warn', { ignoreComments: true, code: 100 }],
-    "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
-    "react-hooks/exhaustive-deps": "warn" ,// Checks effect dependencies
+    // Checks rules of Hooks
+    'react-hooks/rules-of-hooks': 'error',
+    // Checks effect dependencies
+    'react-hooks/exhaustive-deps': 'warn',
 
-    
+
     'react/react-in-jsx-scope': 'off',
     // импорт FC
     '@typescript-eslint/consistent-type-imports': 'warn',
@@ -90,11 +92,11 @@ module.exports = {
     '@typescript-eslint/no-unused-vars': 'warn',
     '@typescript-eslint/naming-convention': 'warn',
     '@typescript-eslint/no-misused-promises': 'warn',
-    "@typescript-eslint/consistent-type-assertions": "off",
+    '@typescript-eslint/consistent-type-assertions': 'off',
     // запятые в конце строки
-    "@typescript-eslint/comma-dangle": "off",
-     // точка с запятой в конце строки
-    "@typescript-eslint/member-delimiter-style": "off"
+    '@typescript-eslint/comma-dangle': 'off',
+    // точка с запятой в конце строки
+    '@typescript-eslint/member-delimiter-style': 'off',
   },
   globals: {
     __IS_DEV__: true,

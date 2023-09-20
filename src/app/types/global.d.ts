@@ -24,4 +24,4 @@ declare module '*.json' {
   export default content
 }
 
-declare const __IS__DEV__: boolean
+declare const __IS_DEV__: boolean

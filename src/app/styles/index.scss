@@ -1,16 +1,13 @@
 @import 'reset';
-@import 'variables/global';
-@import 'themes/normal';
-@import 'themes/dark';
-
-body {
-  font: var(--font-m);
-  color: var(--primary-color);
-}
+@import './variables/global';
+@import './themes/dark';
+@import './themes/normal';
 
 .app {
   min-height: 100vh;
   background: var(--bg-color);
+  color: var(--primary-color);
+  font: var(--font-m);
 }
 
 .content-page {
