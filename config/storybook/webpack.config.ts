@@ -14,7 +14,8 @@ export default ({ config }: { config: webpack.Configuration }) => {
   config.resolve.extensions.push('.ts', '.tsx')
 
   config.module.rules = config.module.rules.map((rule: webpack.RuleSetRule) => {
-    if ((rule.test as string).includes('svg')) {
+    // eslint-disable-next-line @typescript-eslint/prefer-includes
+    if (/svg/.test(rule.test as string)) {
       return { ...rule, exclude: /\.svg$/i }
     }
     return rule
