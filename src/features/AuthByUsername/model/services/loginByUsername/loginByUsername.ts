@@ -10,9 +10,9 @@ interface LoginByUsernameProps {
 }
 
 export const loginByUsername = createAsyncThunk<
-User,
-LoginByUsernameProps,
-{ rejectValue: string }
+  User,
+  LoginByUsernameProps,
+  { rejectValue: string }
 >(
   'login/loginByUsername',
 
@@ -30,7 +30,7 @@ LoginByUsernameProps,
       return res.data
     } catch (e) {
       console.log(e)
-      return thunkAPI.rejectWithValue(i18n.t(('loginErrorMessage')))
+      return thunkAPI.rejectWithValue('Вы ввели неверный логин или пароль')
     }
   }
 )

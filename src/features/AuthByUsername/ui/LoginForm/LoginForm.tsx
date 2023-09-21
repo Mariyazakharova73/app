@@ -41,8 +41,8 @@ const LoginForm: FC<LoginFormProps> = memo(({ className }) => {
 
   return (
     <div className={classNames(cls.LoginForm, {}, [className])}>
-      <Text title={t('formTitle')}/>
-      {error && <Text text={error} theme={TextTheme.ERROR}/>}
+      <Text title={t('formTitle')} />
+      {error && <Text text={t('loginErrorMessage')} theme={TextTheme.ERROR} />}
       <Input
         className={cls.input}
         type='text'
