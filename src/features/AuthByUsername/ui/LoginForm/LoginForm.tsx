@@ -7,6 +7,8 @@ import { Input } from 'shared/ui/Input/Input'
 import { useDispatch, useSelector } from 'react-redux'
 import { loginActions } from '../../model/slice/loginSlice'
 import { getLoginState } from '../../model/selectors/getLoginState/getLoginState'
+import { loginByUsername } from './../../model/services/loginByUsername/loginByUsername'
+import Text, { TextTheme } from 'shared/ui/Text/Text'
 export interface LoginFormProps {
   className?: string
 }
@@ -15,7 +17,7 @@ export interface LoginFormProps {
 const LoginForm: FC<LoginFormProps> = memo(({ className }) => {
   const { t } = useTranslation()
   const dispatch = useDispatch()
-  const { username, password } = useSelector(getLoginState)
+  const { username, password, error, isLoading } = useSelector(getLoginState)
 
   const onChangeUsername = useCallback(
     (value: string) => {
@@ -31,8 +33,16 @@ const LoginForm: FC<LoginFormProps> = memo(({ className }) => {
     [dispatch]
   )
 
+  const onLoginClick = useCallback(() => {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-expect-error
+    dispatch(loginByUsername({ username, password }))
+  }, [dispatch, username, password])
+
   return (
     <div className={classNames(cls.LoginForm, {}, [className])}>
+      <Text title={t('formTitle')}/>
+      {error && <Text text={error} theme={TextTheme.ERROR}/>}
       <Input
         className={cls.input}
         type='text'
@@ -48,7 +58,12 @@ const LoginForm: FC<LoginFormProps> = memo(({ className }) => {
         onChange={onChangePassword}
         value={password}
       />
-      <Button theme={ThemeButton.OUTLINE} className={cls.loginBtn}>
+      <Button
+        theme={ThemeButton.OUTLINE}
+        className={cls.loginBtn}
+        onClick={onLoginClick}
+        disabled={isLoading}
+      >
         {t('enter')}
       </Button>
     </div>

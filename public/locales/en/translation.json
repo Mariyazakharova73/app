@@ -11,5 +11,9 @@
   "main": "Main Page",
   "enter": "Login",
   "username": "\nEnter your username",
-  "password": "Enter password"
+  "password": "Enter password",
+  "formTitle": "Authorization form",
+  "loginErrorMessage": "Invalid login or password entered",
+  "go-out": "Go out",
+  "logout": "Logout"
 }

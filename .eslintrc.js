@@ -75,7 +75,7 @@ module.exports = {
     ],
     'i18n/no-russian-character': 0,
     // комментарии могут быть длинной строкой записаны
-    'max-len': ['warn', { ignoreComments: true, code: 100 }],
+    'max-len': ['warn', { ignoreComments: true, code: 120 }],
     // Checks rules of Hooks
     'react-hooks/rules-of-hooks': 'error',
     // Checks effect dependencies

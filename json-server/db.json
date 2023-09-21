@@ -1,0 +1,38 @@
+{
+  "posts": [
+    {
+      "id": "1",
+      "title": "json-server",
+      "userId": "1"
+    },
+    {
+      "id": "2",
+      "title": "json-server",
+      "userId": "2"
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "body": "some comment",
+      "postId": "1"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "username": "admin",
+      "password": "123"
+    }
+  ],
+  "profile": {
+    "first": "Тимур",
+    "lastname": "Улби",
+    "age": 0,
+    "currency": "RUB",
+    "country": "Russia",
+    "city": "Москва",
+    "username": "admin",
+    "avatar": "https://static.riafan.ru/upload/images/2022/7/2/825256_full.webp"
+  }
+}
