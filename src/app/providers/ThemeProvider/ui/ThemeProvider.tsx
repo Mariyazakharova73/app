@@ -15,6 +15,8 @@ const ThemeProvider: FC<ThemeProviderProps> = ({ children, initialTheme }) => {
     (localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme) || Theme.LIGHT
   document.body.className = defauliTheme
   const [theme, setTheme] = useState(initialTheme || defauliTheme)
+  console.log(initialTheme, 'initialTheme')
+  console.log(theme, 'theme')
 
   const defaultProps = useMemo(() => {
     return { theme, setTheme }
