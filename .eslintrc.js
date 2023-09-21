@@ -99,6 +99,7 @@ module.exports = {
     '@typescript-eslint/comma-dangle': 'off',
     // точка с запятой в конце строки
     '@typescript-eslint/member-delimiter-style': 'off',
+    "react/display-name": 'off'
   },
   globals: {
     __IS_DEV__: true,
