@@ -4,7 +4,7 @@ import cls from './LoginForm.module.scss'
 import { useTranslation } from 'react-i18next'
 import Button, { ThemeButton } from 'shared/ui/Button/Button'
 import { Input } from 'shared/ui/Input/Input'
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { loginActions, loginReducer } from '../../model/slice/loginSlice'
 import { loginByUsername } from './../../model/services/loginByUsername/loginByUsername'
 import Text, { TextTheme } from 'shared/ui/Text/Text'
@@ -15,8 +15,10 @@ import { getLoginIsLoading } from './../../model/selectors/getLoginIsLoading/get
 import DynamicModuleLoader, {
   type ReducerList,
 } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
 export interface LoginFormProps {
   className?: string
+  onSuccess: () => void
 }
 
 // редюсеры, которые нужно добавлять асинхронно
@@ -26,9 +28,9 @@ const initialReducers: ReducerList = {
 }
 
 // eslint-disable-next-line react/prop-types
-const LoginForm: FC<LoginFormProps> = memo(({ className }) => {
+const LoginForm: FC<LoginFormProps> = memo(({ className, onSuccess }) => {
   const { t } = useTranslation()
-  const dispatch = useDispatch()
+  const dispatch = useAppDispatch()
   const username = useSelector(getLoginUsername)
   const password = useSelector(getLoginPassword)
   const error = useSelector(getLoginError)
@@ -48,11 +50,12 @@ const LoginForm: FC<LoginFormProps> = memo(({ className }) => {
     [dispatch]
   )
 
-  const onLoginClick = useCallback(() => {
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-expect-error
-    dispatch(loginByUsername({ username, password }))
-  }, [dispatch, username, password])
+  const onLoginClick = useCallback(async () => {
+    const res = await dispatch(loginByUsername({ username, password }))
+    if (res.meta.requestStatus === 'fulfilled') {
+      onSuccess()
+    }
+  }, [dispatch, username, password, onSuccess])
 
   return (
     <DynamicModuleLoader

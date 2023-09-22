@@ -1,19 +1,17 @@
 {
-  "title": "TEST english",
   "language": "English",
   "ln": "En",
-  "name": "name",
   "not-found": "Page not found",
   "error": "An unexpected error occurred",
-  "update-page": "\nRefresh the page",
+  "update-page": "Refresh the page",
   "toggle": "Toggle",
-  "about": "About Page",
   "main": "Main Page",
+  "about": "About Page",
+  "profile": "Profile",
   "enter": "Login",
-  "username": "\nEnter your username",
+  "username": "Enter your username",
   "password": "Enter password",
   "formTitle": "Authorization form",
   "loginErrorMessage": "Invalid login or password entered",
-  "go-out": "Go out",
   "logout": "Logout"
 }

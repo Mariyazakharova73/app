@@ -4,11 +4,9 @@ import { LanguageSwitcher } from 'shared/ui/LanguageSwitcher'
 import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher'
 import cls from './Sidebar.module.scss'
 import Button, { ButtonSize, ThemeButton } from 'shared/ui/Button/Button'
-import AppLink, { AppLinkTheme } from 'shared/ui/AppLink/AppLink'
-import { RoutePath } from 'shared/config/routeConfig/routeConfig'
 import { useTranslation } from 'react-i18next'
-import AboutIcon from 'shared/assets/icons/about.svg'
-import MainIcon from 'shared/assets/icons/home.svg'
+import { SidebarItemList } from '../model/items'
+import SidebarItem from './SidebarItem/SidebarItem'
 export interface SidebarProps {
   className?: string
 }
@@ -38,23 +36,9 @@ const Sidebar: FC<SidebarProps> = ({ className }) => {
         {collapsed ? '>' : '<'}
       </Button>
       <div className={cls.items}>
-        <AppLink
-          className={cls.item}
-          theme={AppLinkTheme.SECONDARY}
-          to={RoutePath.main}
-        >
-          <MainIcon className={cls.icon} />
-          <span className={cls.link}>{t('main')}</span>
-        </AppLink>
-
-        <AppLink
-          className={cls.item}
-          theme={AppLinkTheme.SECONDARY}
-          to={RoutePath.about}
-        >
-          <AboutIcon className={cls.icon} />
-          <span className={cls.link}>{t('about')}</span>
-        </AppLink>
+        {SidebarItemList.map((item) => {
+          return <SidebarItem key={item.text} item={item} collapsed={collapsed} />
+        })}
       </div>
       <div className={cls.switchers}>
         <ThemeSwitcher />

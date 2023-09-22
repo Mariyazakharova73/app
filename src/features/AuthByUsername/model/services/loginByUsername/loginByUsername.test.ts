@@ -4,8 +4,7 @@ import { setAuthUserdata } from 'entities/User'
 import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk'
 
 jest.mock('axios')
-
-const mockedAxios = jest.mocked(axios, true)
+const mockedAxios = jest.mocked(axios)
 describe('loginByUsername', () => {
   //   let dispatch: Dispatch
   //   let getState: () => StateSchema
