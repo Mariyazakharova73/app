@@ -1,4 +1,7 @@
-import { CombinedState, type AnyAction, type EnhancedStore, type Reducer, type ReducersMapObject } from '@reduxjs/toolkit'
+import {
+  type CombinedState, type AnyAction,
+  type EnhancedStore, type Reducer, type ReducersMapObject
+} from '@reduxjs/toolkit'
 import { type CounterSchema } from 'entities/Counter'
 import { type UserSchema } from 'entities/User'
 import { type LoginSchema } from 'features/AuthByUsername'

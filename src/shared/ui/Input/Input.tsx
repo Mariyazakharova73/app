@@ -1,5 +1,4 @@
 import React, {
-  type FC,
   type InputHTMLAttributes,
   memo,
   type ChangeEvent,
