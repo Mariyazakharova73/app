@@ -4,6 +4,7 @@
 
 Проект без использования Create React App. Настроена работа с css-модулями. Бандл разделен на чанки (React.lazy). Добавлена возможность смены темы (React Context, css-variables, custom hook useTheme). Добавлена helper-функция для работы с классами. Реализована возможность смены языка (i18next). Настроен EsLint, Stylelint, husky. Протестированы некоторые функции (jest) и компоненты (react-testing-library). Настроена обработка ошибок (React ErrorBoundary). Настроена работа со Storybook. 
 Модальное окно создано с использованием React Portal. 
+loginReducer добавляется асинхроно через reducerManager (форма аторизации подгружается только для неавторизованного пользователя).
 
 <details><summary>Применен Feature-Sliced Design</summary>
 app - router, ThemeProvider, StoreProvider, styles, types

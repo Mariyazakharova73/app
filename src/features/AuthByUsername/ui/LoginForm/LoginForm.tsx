@@ -1,23 +1,39 @@
-import React, { memo, useCallback, type FC } from 'react'
+import React, { memo, useCallback, useEffect, type FC } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
 import cls from './LoginForm.module.scss'
 import { useTranslation } from 'react-i18next'
 import Button, { ThemeButton } from 'shared/ui/Button/Button'
 import { Input } from 'shared/ui/Input/Input'
-import { useDispatch, useSelector } from 'react-redux'
-import { loginActions } from '../../model/slice/loginSlice'
-import { getLoginState } from '../../model/selectors/getLoginState/getLoginState'
+import { useDispatch, useSelector, useStore } from 'react-redux'
+import { loginActions, loginReducer } from '../../model/slice/loginSlice'
 import { loginByUsername } from './../../model/services/loginByUsername/loginByUsername'
 import Text, { TextTheme } from 'shared/ui/Text/Text'
+import { type ReduxStoreWithManager } from './../../../../app/providers/StoreProvider/config/StateSchema'
+import { getLoginUsername } from './../../model/selectors/getLoginUsername/getLoginUsername'
+import { getLoginPassword } from './../../model/selectors/getLoginPassword/getLoginPassword'
+import { getLoginError } from './../../model/selectors/getLoginError/getLoginError'
+import { getLoginIsLoading } from './../../model/selectors/getLoginIsLoading/getLoginIsLoading'
+import DynamicModuleLoader, {
+  type ReducerList,
+} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 export interface LoginFormProps {
   className?: string
+}
+
+// редюсеры, которые нужно добавлять асинхронно
+// вынесли из комп, чтобы не создавалась новая ссылка при каждом рендере
+const initialReducers: ReducerList = {
+  loginForm: loginReducer,
 }
 
 // eslint-disable-next-line react/prop-types
 const LoginForm: FC<LoginFormProps> = memo(({ className }) => {
   const { t } = useTranslation()
   const dispatch = useDispatch()
-  const { username, password, error, isLoading } = useSelector(getLoginState)
+  const username = useSelector(getLoginUsername)
+  const password = useSelector(getLoginPassword)
+  const error = useSelector(getLoginError)
+  const isLoading = useSelector(getLoginIsLoading)
 
   const onChangeUsername = useCallback(
     (value: string) => {
@@ -40,33 +56,41 @@ const LoginForm: FC<LoginFormProps> = memo(({ className }) => {
   }, [dispatch, username, password])
 
   return (
-    <div className={classNames(cls.LoginForm, {}, [className])}>
-      <Text title={t('formTitle')} />
-      {error && <Text text={t('loginErrorMessage')} theme={TextTheme.ERROR} />}
-      <Input
-        className={cls.input}
-        type='text'
-        placeholder={t('username')}
-        autofocus
-        onChange={onChangeUsername}
-        value={username}
-      />
-      <Input
-        className={cls.input}
-        type='text'
-        placeholder={t('password')}
-        onChange={onChangePassword}
-        value={password}
-      />
-      <Button
-        theme={ThemeButton.OUTLINE}
-        className={cls.loginBtn}
-        onClick={onLoginClick}
-        disabled={isLoading}
-      >
-        {t('enter')}
-      </Button>
-    </div>
+    <DynamicModuleLoader
+      removeAfterUnMount
+      name='loginForm'
+      reducers={initialReducers}
+    >
+      <div className={classNames(cls.LoginForm, {}, [className])}>
+        <Text title={t('formTitle')} />
+        {error && (
+          <Text text={t('loginErrorMessage')} theme={TextTheme.ERROR} />
+        )}
+        <Input
+          className={cls.input}
+          type='text'
+          placeholder={t('username')}
+          autofocus
+          onChange={onChangeUsername}
+          value={username}
+        />
+        <Input
+          className={cls.input}
+          type='text'
+          placeholder={t('password')}
+          onChange={onChangePassword}
+          value={password}
+        />
+        <Button
+          theme={ThemeButton.OUTLINE}
+          className={cls.loginBtn}
+          onClick={onLoginClick}
+          disabled={isLoading}
+        >
+          {t('enter')}
+        </Button>
+      </div>
+    </DynamicModuleLoader>
   )
 })
 

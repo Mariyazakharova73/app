@@ -1,7 +1,8 @@
-import React, { type FC } from 'react'
+import React, { Suspense, type FC } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
+import { Loader } from 'shared/ui/Loader'
 import { Modal } from 'shared/ui/Modal'
-import LoginForm from '../LoginForm/LoginForm'
+import { LoginFormAsync } from '../LoginForm/LoginForm.async'
 // import cls from './LoginModal.module.scss'
 
 export interface LoginModalProps {
@@ -19,7 +20,9 @@ const LoginModal: FC<LoginModalProps> = ({ className, isOpen, onClose }) => {
       // модальное окно появяется в DOM только в момент открытия
       lazy
     >
-      <LoginForm />
+      <Suspense fallback={<Loader/>}>
+        <LoginFormAsync />
+      </Suspense>
     </Modal>
   )
 }
