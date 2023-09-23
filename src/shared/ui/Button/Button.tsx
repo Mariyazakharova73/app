@@ -1,4 +1,4 @@
-import React, { type ButtonHTMLAttributes, type FC } from 'react'
+import React, { memo, type ReactNode, type ButtonHTMLAttributes } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
 import cls from './Button.module.scss'
 
@@ -21,9 +21,10 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   square?: boolean
   size?: ButtonSize
   disabled?: boolean
+  children?: ReactNode
 }
 
-const Button: FC<ButtonProps> = ({
+const Button = memo(({
   className,
   children,
   theme,
@@ -31,7 +32,7 @@ const Button: FC<ButtonProps> = ({
   size,
   disabled,
   ...otherProps
-}) => {
+}: ButtonProps) => {
   const mods: Record<string, boolean> = {
     [cls.square]: square,
     [cls.disabled]: disabled
@@ -49,5 +50,5 @@ const Button: FC<ButtonProps> = ({
     </button>
   )
 }
-
+)
 export default Button

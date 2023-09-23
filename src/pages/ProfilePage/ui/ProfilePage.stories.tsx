@@ -4,7 +4,7 @@ import { Theme } from 'app/providers/ThemeProvider'
 import { ThemeDecorator } from '../../../shared/config/storybook/ThemeDecorator/ThemeDecorator'
 
 const meta = {
-  title: 'pages/MainPage',
+  title: 'pages/ProfilePage',
   component: ProfilePage,
 
   argTypes: {

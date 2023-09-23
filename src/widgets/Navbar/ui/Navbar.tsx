@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react'
+import React, { useState, useCallback, memo } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
 import cls from './Navbar.module.scss'
 import { useTranslation } from 'react-i18next'
@@ -59,4 +59,4 @@ export const Navbar = ({ className }: NavbarProps) => {
   )
 }
 
-export default Navbar
+export default memo(Navbar)

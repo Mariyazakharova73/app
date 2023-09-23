@@ -3,7 +3,7 @@ import { classNames } from 'shared/lib/classNames/classNames'
 import cls from './LoginForm.module.scss'
 import { useTranslation } from 'react-i18next'
 import Button, { ThemeButton } from 'shared/ui/Button/Button'
-import { Input } from 'shared/ui/Input/Input'
+import Input from 'shared/ui/Input/Input'
 import { useSelector } from 'react-redux'
 import { loginActions, loginReducer } from '../../model/slice/loginSlice'
 import { loginByUsername } from './../../model/services/loginByUsername/loginByUsername'
@@ -27,8 +27,7 @@ const initialReducers: ReducerList = {
   loginForm: loginReducer,
 }
 
-// eslint-disable-next-line react/prop-types
-const LoginForm: FC<LoginFormProps> = memo(({ className, onSuccess }) => {
+const LoginForm: FC<LoginFormProps> = ({ className, onSuccess }) => {
   const { t } = useTranslation()
   const dispatch = useAppDispatch()
   const username = useSelector(getLoginUsername)
@@ -60,7 +59,6 @@ const LoginForm: FC<LoginFormProps> = memo(({ className, onSuccess }) => {
   return (
     <DynamicModuleLoader
       removeAfterUnMount
-      name='loginForm'
       reducers={initialReducers}
     >
       <div className={classNames(cls.LoginForm, {}, [className])}>
@@ -94,6 +92,6 @@ const LoginForm: FC<LoginFormProps> = memo(({ className, onSuccess }) => {
       </div>
     </DynamicModuleLoader>
   )
-})
+}
 
-export default LoginForm
+export default memo(LoginForm)

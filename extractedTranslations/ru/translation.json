@@ -18,6 +18,7 @@
   "main": "main",
   "not-found": "not-found",
   "password": "password",
+  "profile": "profile",
   "toggle": "toggle",
   "update-page": "update-page",
   "username": "username",

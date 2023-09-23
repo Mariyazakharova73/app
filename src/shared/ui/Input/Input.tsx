@@ -20,8 +20,7 @@ export interface InputProps extends HTMLInputProps {
   autofocus?: boolean
 }
 
-// eslint-disable-next-line react/display-name
-export const Input = memo((props: InputProps) => {
+const Input = (props: InputProps) => {
   const {
     className,
     value,
@@ -57,4 +56,6 @@ export const Input = memo((props: InputProps) => {
       />
     </div>
   )
-})
+}
+
+export default memo(Input)

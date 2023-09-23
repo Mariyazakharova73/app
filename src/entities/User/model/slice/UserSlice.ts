@@ -17,7 +17,6 @@ export const userSlice = createSlice({
       if (user) {
         state.authData = JSON.parse(user)
       }
-      console.log('init')
     },
     logout: (state) => {
       state.authData = undefined

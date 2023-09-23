@@ -1,4 +1,4 @@
-import React, { type FC } from 'react'
+import React, { memo, type FC } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
 import cls from './AppLink.module.scss'
 import { Link, type LinkProps } from 'react-router-dom'
@@ -31,4 +31,4 @@ const AppLink: FC<AppLinkProps> = ({
   )
 }
 
-export default AppLink
+export default memo(AppLink)

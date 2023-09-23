@@ -5,9 +5,8 @@ import { type StateSchemaKey } from 'app/providers/StoreProvider/config/StateSch
 import { type Reducer } from '@reduxjs/toolkit'
 
 interface DynamicModuleLoaderProps {
-  name: StateSchemaKey
   reducers: ReducerList
-  children: ReactNode
+  children?: ReactNode
   removeAfterUnMount?: boolean
 }
 
@@ -27,6 +26,8 @@ const DynamicModuleLoader: FC<DynamicModuleLoaderProps> = ({
 
   useEffect(() => {
     Object.entries(reducers).forEach(([name, reducer]: ReducerListEntry) => {
+      console.log(name)
+      console.log(reducer.name)
       store.reducerManager.add(name, reducer)
     })
 
@@ -39,7 +40,7 @@ const DynamicModuleLoader: FC<DynamicModuleLoaderProps> = ({
         )
       }
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return <>{children}</>

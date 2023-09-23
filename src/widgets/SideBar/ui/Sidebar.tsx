@@ -1,10 +1,9 @@
-import React, { type FC, useState } from 'react'
+import React, { type FC, useState, useMemo, memo } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
 import { LanguageSwitcher } from 'shared/ui/LanguageSwitcher'
 import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher'
 import cls from './Sidebar.module.scss'
 import Button, { ButtonSize, ThemeButton } from 'shared/ui/Button/Button'
-import { useTranslation } from 'react-i18next'
 import { SidebarItemList } from '../model/items'
 import SidebarItem from './SidebarItem/SidebarItem'
 export interface SidebarProps {
@@ -13,7 +12,7 @@ export interface SidebarProps {
 
 const Sidebar: FC<SidebarProps> = ({ className }) => {
   const [collapsed, setCollapsed] = useState(false)
-  const { t } = useTranslation('')
+
   const onToggle = () => {
     setCollapsed((prev) => !prev)
   }
@@ -37,7 +36,9 @@ const Sidebar: FC<SidebarProps> = ({ className }) => {
       </Button>
       <div className={cls.items}>
         {SidebarItemList.map((item) => {
-          return <SidebarItem key={item.text} item={item} collapsed={collapsed} />
+          return (
+            <SidebarItem key={item.text} item={item} collapsed={collapsed} />
+          )
         })}
       </div>
       <div className={cls.switchers}>
@@ -48,4 +49,4 @@ const Sidebar: FC<SidebarProps> = ({ className }) => {
   )
 }
 
-export default Sidebar
+export default memo(Sidebar)

@@ -1,4 +1,4 @@
-import { type FC } from 'react'
+import { memo, type FC } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
 import cls from './Text.module.scss'
 
@@ -28,4 +28,4 @@ const Text: FC<TextProps> = ({
   )
 }
 
-export default Text
+export default memo(Text)

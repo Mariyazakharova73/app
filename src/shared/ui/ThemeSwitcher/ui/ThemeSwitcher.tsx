@@ -1,4 +1,4 @@
-import React, { type FC } from 'react'
+import React, { memo, type FC } from 'react'
 import { Theme, useTheme } from 'app/providers/ThemeProvider'
 import { classNames } from 'shared/lib/classNames/classNames'
 import cls from './ThemeSwitcher.module.scss'
@@ -23,4 +23,4 @@ const ThemeSwitcher: FC<ThemeSwitcherProps> = ({ className }) => {
   )
 }
 
-export default ThemeSwitcher
+export default memo(ThemeSwitcher)
