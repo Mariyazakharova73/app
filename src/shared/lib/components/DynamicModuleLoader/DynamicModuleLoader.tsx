@@ -14,8 +14,6 @@ export type ReducerList = {
   [name in StateSchemaKey]?: Reducer
 }
 
-export type ReducerListEntry = [StateSchemaKey, Reducer]
-
 // Для добавления редюсеров асинхронно
 const DynamicModuleLoader: FC<DynamicModuleLoaderProps> = ({
   children,
@@ -23,21 +21,17 @@ const DynamicModuleLoader: FC<DynamicModuleLoaderProps> = ({
   reducers, // counter, login, user
 }) => {
   const store = useStore() as ReduxStoreWithManager
-
+  console.log(reducers, 'reducers')
   useEffect(() => {
-    Object.entries(reducers).forEach(([name, reducer]: ReducerListEntry) => {
-      console.log(name)
-      console.log(reducer.name)
-      store.reducerManager.add(name, reducer)
+    Object.entries(reducers).forEach(([name, reducer]) => {
+      store.reducerManager.add(name as StateSchemaKey, reducer)
     })
 
     return () => {
       if (removeAfterUnMount) {
-        Object.entries(reducers).forEach(
-          ([name, reducer]: ReducerListEntry) => {
-            store.reducerManager.remove(name)
-          }
-        )
+        Object.entries(reducers).forEach(([name, reducer]) => {
+          store.reducerManager.remove(name as StateSchemaKey)
+        })
       }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps

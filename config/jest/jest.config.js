@@ -8,7 +8,7 @@ const path = require('path')
 
 /** @type {import('jest').Config} */
 const config = {
-  globals: { __IS_DEV__: true },
+  globals: { __IS_DEV__: true, __API__: "" },
   clearMocks: true,
   testEnvironment: 'jsdom',
   coveragePathIgnorePatterns: ['\\\\node_modules\\\\'],

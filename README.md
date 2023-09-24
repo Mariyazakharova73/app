@@ -17,7 +17,7 @@ feautures - AuthByUsername
 
 entities - User
 
-shared - AppLink, classNames, assets, config i18next, routeConfig, Loader, Button, Modal, Portal, hooks
+shared - AppLink, classNames, assets, config i18next, routeConfig, Loader, Button, Modal, Portal, hooks, api
 
 </details>
 

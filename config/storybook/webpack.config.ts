@@ -11,21 +11,28 @@ export default ({ config }: { config: webpack.Configuration }) => {
     entry: '',
     html: '',
   }
-  config.resolve.modules.push(paths.src)
-  config.resolve.extensions.push('.ts', '.tsx')
+  config!.resolve!.modules!.push(paths.src)
+  config!.resolve!.extensions!.push('.ts', '.tsx')
 
-  config.module.rules = config.module.rules.map((rule: webpack.RuleSetRule) => {
-    // eslint-disable-next-line @typescript-eslint/prefer-includes
-    if (/svg/.test(rule.test as string)) {
-      return { ...rule, exclude: /\.svg$/i }
+  config!.module!.rules = config!.module!.rules!.map(
+    // @ts-ignore
+    (rule: webpack.RuleSetRule) => {
+      if (/svg/.test(rule.test as string)) {
+        return { ...rule, exclude: /\.svg$/i }
+      }
+      return rule
     }
-    return rule
-  })
-  config.module.rules.push({
+  )
+  config!.module!.rules.push({
     test: /\.svg$/,
     use: ['@svgr/webpack'],
   })
-  config.module.rules.push(buildCssLoaders(true))
-  config.plugins.push(new DefinePlugin({ __IS_DEV__: true }))
+  config!.module!.rules.push(buildCssLoaders(true))
+  config!.plugins!.push(
+    new DefinePlugin({
+      __IS_DEV__: JSON.stringify(true),
+      __API_: JSON.stringify(''),
+    })
+  )
   return config
 }

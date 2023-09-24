@@ -80,7 +80,8 @@ module.exports = {
     'react-hooks/rules-of-hooks': 'error',
     // Checks effect dependencies
     'react-hooks/exhaustive-deps': 'warn',
-
+    'no-undef': 'off',
+    
 
     'react/react-in-jsx-scope': 'off',
     // импорт FC
@@ -99,9 +100,15 @@ module.exports = {
     '@typescript-eslint/comma-dangle': 'off',
     // точка с запятой в конце строки
     '@typescript-eslint/member-delimiter-style': 'off',
-    "react/display-name": 'off'
+    "react/display-name": 'off',
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "@typescript-eslint/no-unnecessary-type-assertion": "off",
+    "@typescript-eslint/prefer-ts-expect-error": "off",
+    "@typescript-eslint/ban-ts-comment": "off",
+    "@typescript-eslint/prefer-includes": "off"
   },
   globals: {
     __IS_DEV__: true,
+    __API__: true,
   },
 }

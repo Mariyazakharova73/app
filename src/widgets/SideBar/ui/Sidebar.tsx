@@ -1,4 +1,4 @@
-import React, { type FC, useState, useMemo, memo } from 'react'
+import React, { type FC, useState, memo } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
 import { LanguageSwitcher } from 'shared/ui/LanguageSwitcher'
 import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher'
