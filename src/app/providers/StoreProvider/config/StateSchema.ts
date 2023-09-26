@@ -4,7 +4,6 @@ import {
   type EnhancedStore,
   type Reducer,
   type ReducersMapObject,
-  Dispatch,
 } from '@reduxjs/toolkit'
 import { type AxiosInstance } from 'axios'
 import { type CounterSchema } from 'entities/Counter'
@@ -43,4 +42,5 @@ export interface ThunkExtraArg {
 export interface ThunkConfig<T> {
   rejectValue: T
   extra: ThunkExtraArg
+  state: StateSchema
 }

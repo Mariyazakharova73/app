@@ -21,7 +21,6 @@ const DynamicModuleLoader: FC<DynamicModuleLoaderProps> = ({
   reducers, // counter, login, user
 }) => {
   const store = useStore() as ReduxStoreWithManager
-  console.log(reducers, 'reducers')
   useEffect(() => {
     Object.entries(reducers).forEach(([name, reducer]) => {
       store.reducerManager.add(name as StateSchemaKey, reducer)

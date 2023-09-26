@@ -1,6 +1,12 @@
 {
   "profile": "Profile",
   "edit": "Edit",
-  "firstName": "First Name",
-  "lastName": "Last Name"
+  "profileError": "There was an error loading your profile",
+  "profileErrorText": "Try refreshing the page",
+  "cancel": "Cancel",
+  "save": "Save",
+  "age": "Age",
+  "city": "City",
+  "first": "First Name",
+  "lastname": "Last Name"
 }

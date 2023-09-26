@@ -34,7 +34,6 @@ export function createReducerManager (
       }
       reducers[key] = reducer
       combinedReducer = combineReducers(reducers)
-      console.log(reducers, 'add reducers')
     },
     remove: (key: StateSchemaKey) => {
       if (!key || !reducers[key]) {

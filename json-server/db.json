@@ -26,9 +26,9 @@
     }
   ],
   "profile": {
-    "first": "Mary",
+    "first": "Mary123456",
     "lastname": "React",
-    "age": 29,
+    "age": "25",
     "currency": "RUB",
     "country": "Russia",
     "city": "Москва",
