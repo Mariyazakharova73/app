@@ -3,6 +3,11 @@
   "countryLabel": "",
   "currencyLabel": "",
   "edit": "",
+  "incorrectAge": "",
+  "incorrectCity": "",
+  "incorrectUser": "",
+  "noData": "",
   "profile": "",
-  "save": ""
+  "save": "",
+  "serverError": ""
 }

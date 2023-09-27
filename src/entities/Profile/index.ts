@@ -1,4 +1,4 @@
-import { fetchProfileData } from './model/services/fetchProfileData'
+import { fetchProfileData } from './model/services/fetchProfileData/fetchProfileData'
 import { profileActions, profileReducer } from './model/slice/profileSlice'
 import { type Profile, type ProfileSchema } from './model/types/profile'
 import ProfileCard from './ui/ProfileCard/ProfileCard'
@@ -7,7 +7,8 @@ import { getProfileData } from './model/selectors/getProfileData/getProfileData'
 import { getProfileIsLoading } from './model/selectors/getProfileIsLoading/getProfileIsLoading'
 import { getProfileReadOnly } from './model/selectors/getProfileReadOnly/getProfileReadOnly'
 import { getProfileForm } from './model/selectors/getProfileForm/getProfileForm'
-import { updateProfileData } from './model/services/updateProfiledata'
+import { updateProfileData } from './model/services/updateProfiledata/updateProfiledata'
+import { getProfileValidateErrors } from './model/selectors/getProfileValidateErrors/getProfileValidateErrors'
 
 export {
   type Profile,
@@ -21,5 +22,6 @@ export {
   getProfileIsLoading,
   getProfileReadOnly,
   getProfileForm,
-  updateProfileData
+  updateProfileData,
+  getProfileValidateErrors
 }

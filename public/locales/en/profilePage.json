@@ -13,5 +13,10 @@
   "city": "City",
   "username": "Username",
   "avatar": "Avatar",
-  "countryLabel": "\nSpecify country"
+  "countryLabel": "\nSpecify country",
+  "serverError": "Server Error",
+  "incorrectAge": "Incorrect Age",
+  "incorrectCity": "Incorrect city",
+  "incorrectUser": "Incorrect user data",
+  "noData": "No Data"
 }
