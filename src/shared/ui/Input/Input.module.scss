@@ -5,11 +5,16 @@
 
 .placeholder {
   margin-right: 5px;
+  color: var(--inverted-secondary-color);
 }
 
 .input {
   background: transparent;
-  border-color: var(--inverted-primary-color);
-  outline-color: var(--inverted-primary-color);
+  padding: 5px 10px;
+  border:0;
+  box-shadow: var(--shadow-input);
+  color: var(--inverted-primary-color);
+  border-radius: 5px;
+  outline: none;
   caret-color: var(--inverted-primary-color);
 }

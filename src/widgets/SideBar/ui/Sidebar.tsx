@@ -37,7 +37,7 @@ const Sidebar: FC<SidebarProps> = ({ className }) => {
       <div className={cls.items}>
         {SidebarItemList.map((item) => {
           return (
-            <SidebarItem key={item.text} item={item} collapsed={collapsed} />
+            <SidebarItem key={item.text} item={item} collapsed={collapsed}/>
           )
         })}
       </div>

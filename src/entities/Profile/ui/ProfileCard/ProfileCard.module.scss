@@ -1,6 +1,13 @@
 .ProfileCard {
   padding: 20px;
-  border: 2px solid var(--inverted-bg-color)
+  box-shadow: var(--shadow);
+  border-radius: 10px;
+}
+
+.avatarWrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
 .input {
@@ -19,4 +26,5 @@
   outline: none;
   outline-offset: 0;
   border: none;
+  box-shadow: none;
 }

@@ -1,11 +1,8 @@
-export enum Currency {
-  RUB = 'RUB',
-  EUR = 'EUR',
-  USD = 'USD',
-}
-
-export enum Country {
-  Russia = 'Russia',
-  Belarus = 'Belarus',
-  Armenia = 'Armenia'
+export enum FormKeys {
+  FIRST = 'first',
+  LAST = 'lastname',
+  AGE = 'age',
+  CITY = 'city',
+  USERNAME = 'username',
+  AVATAR = 'avatar',
 }

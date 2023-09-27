@@ -11,10 +11,10 @@ export interface ThemeProviderProps {
 }
 
 const ThemeProvider: FC<ThemeProviderProps> = ({ children, initialTheme }) => {
-  const defauliTheme =
+  const defaultTheme =
     (localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme) || Theme.LIGHT
-  document.body.className = defauliTheme
-  const [theme, setTheme] = useState(initialTheme || defauliTheme)
+  document.body.className = defaultTheme
+  const [theme, setTheme] = useState(initialTheme || defaultTheme)
 
   const defaultProps = useMemo(() => {
     return { theme, setTheme }

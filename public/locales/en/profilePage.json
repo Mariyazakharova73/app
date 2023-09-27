@@ -5,8 +5,13 @@
   "profileErrorText": "Try refreshing the page",
   "cancel": "Cancel",
   "save": "Save",
-  "age": "Age",
-  "city": "City",
   "first": "First Name",
-  "lastname": "Last Name"
+  "lastname": "Last Name",
+  "age": "Age",
+  "currency": "Currency",
+  "country": "Country",
+  "city": "City",
+  "username": "Username",
+  "avatar": "Avatar",
+  "countryLabel": "\nSpecify country"
 }
