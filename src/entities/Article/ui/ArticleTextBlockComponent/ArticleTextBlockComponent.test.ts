@@ -1,0 +1,4 @@
+describe('ArticleTextBlockComponent', () => {
+  test('', () => {
+  })
+})

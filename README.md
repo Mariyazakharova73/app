@@ -2,10 +2,11 @@
 
 #### О проекте
 
-Проект без использования Create React App. Настроена работа с css-модулями. Бандл разделен на чанки (React.lazy). Добавлена возможность смены темы (React Context, css-variables, custom hook useTheme). Добавлена helper-функция для работы с классами. Реализована возможность смены языка (i18next). Настроен EsLint, Stylelint, husky. Протестированы некоторые функции (jest), компоненты (react-testing-library), асинхронные функции, селекторы. Настроена обработка ошибок (React ErrorBoundary). Настроена работа со Storybook.
+Проект без использования Create React App. Настроена работа с css-модулями. Для имитации бэкенда используется JSON Server. Бандл разделен на чанки (React.lazy). Добавлена возможность смены темы (React Context, css-variables, custom hook useTheme). Добавлена helper-функция для работы с классами. Реализована возможность смены языка (i18next). Настроен EsLint, Stylelint, husky. Протестированы некоторые функции (jest), компоненты (react-testing-library), асинхронные функции, селекторы. Настроена обработка ошибок (React ErrorBoundary). Настроена работа со Storybook.
 Модальное окно создано с использованием React Portal.
 loginReducer, profileReducer добавляются асинхроно через reducerManager (форма авторизации подгружается только для неавторизованного пользователя).
 Страница профиля защищена от неавторизованного пользователя. В режиме редактирования можно изменить данные профиля.
+
 
 <details><summary>Применен Feature-Sliced Design</summary>
 app - router, ThemeProvider, StoreProvider, styles, types
