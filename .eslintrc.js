@@ -105,7 +105,9 @@ module.exports = {
     "@typescript-eslint/no-unnecessary-type-assertion": "off",
     "@typescript-eslint/prefer-ts-expect-error": "off",
     "@typescript-eslint/ban-ts-comment": "off",
-    "@typescript-eslint/prefer-includes": "off"
+    "@typescript-eslint/prefer-includes": "off",
+    // необработанные операторы Promise
+    "@typescript-eslint/no-floating-promises": "warn"
   },
   globals: {
     __IS_DEV__: true,

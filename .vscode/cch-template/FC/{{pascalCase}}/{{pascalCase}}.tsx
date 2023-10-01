@@ -1,4 +1,4 @@
-import React, { type FC } from 'react'
+import React, { memo, type FC } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
 import cls from './{{pascalCase}}.module.scss'
 import { useTranslation } from 'react-i18next'
@@ -16,5 +16,5 @@ const {{pascalCase}}: FC<{{pascalCase}}Props> = ({ className }) => {
   )
 }
 
-export default {{pascalCase}}
+export default memo({{pascalCase}})
 
