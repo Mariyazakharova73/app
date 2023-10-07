@@ -46,5 +46,5 @@ export interface Article {
   createdAt: string
   userId: string
   type: ArticleType[]
-  blocks: ArticleBlock
+  blocks: ArticleBlock []
 }

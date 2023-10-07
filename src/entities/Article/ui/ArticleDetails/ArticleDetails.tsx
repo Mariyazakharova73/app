@@ -1,4 +1,5 @@
-import React, { memo, useEffect, type FC } from 'react'
+import React, { memo, useCallback, useEffect, type FC } from 'react'
+/* eslint-disable indent */
 import { classNames } from 'shared/lib/classNames/classNames'
 import cls from './ArticleDetails.module.scss'
 import { useTranslation } from 'react-i18next'
@@ -19,6 +20,13 @@ import Skeleton from 'shared/ui/Skeleton/ui/Skeleton'
 import Avatar from 'shared/ui/Avatar/Avatar'
 import EyeIcon from 'shared/assets/icons/eye.svg'
 import DateIcon from 'shared/assets/icons/date.svg'
+import {
+  type ArticleBlock,
+  ArticleBlockType,
+} from 'entities/Article/model/types/article'
+import ArticleCodeBlockComponent from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent'
+import ArticleImageBlockComponent from '../ArticleImageBlockComponent/ArticleImageBlockComponent'
+import ArticleTextBlockComponent from '../ArticleTextBlockComponent/ArticleTextBlockComponent'
 
 export interface ArticleDetailsProps {
   className?: string
@@ -36,8 +44,41 @@ const ArticleDetails: FC<ArticleDetailsProps> = ({ className, id }) => {
   const article = useSelector(getArticleDetailsData)
   const error = useSelector(getArticleDetailsError)
 
+  const renderBlock = useCallback((block: ArticleBlock) => {
+    switch (block.type) {
+      case ArticleBlockType.CODE:
+        return (
+          <ArticleCodeBlockComponent
+            key={block.id}
+            className={cls.block}
+            block={block}
+          />
+        )
+      case ArticleBlockType.IMAGE:
+        return (
+          <ArticleImageBlockComponent
+            key={block.id}
+            className={cls.block}
+            block={block}
+          />
+        )
+      case ArticleBlockType.TEXT:
+        return (
+          <ArticleTextBlockComponent
+            key={block.id}
+            className={cls.block}
+            block={block}
+          />
+        )
+      default:
+        return null
+    }
+  }, [])
+
   useEffect(() => {
-    dispatch(fetchArticleById(id))
+    if (__PROJECT__ !== 'storybook') {
+      dispatch(fetchArticleById(id))
+    }
   }, [dispatch, id])
 
   let content
@@ -72,13 +113,14 @@ const ArticleDetails: FC<ArticleDetailsProps> = ({ className, id }) => {
           size={TextSize.L}
         />
         <div className={cls.articleInfo}>
-          <EyeIcon className={cls.icon}/>
+          <EyeIcon className={cls.icon} />
           <Text text={String(article?.views)} />
         </div>
         <div className={cls.articleInfo}>
-          <DateIcon className={cls.icon}/>
+          <DateIcon className={cls.icon} />
           <Text text={article?.createdAt} />
         </div>
+        {article?.blocks.map(renderBlock)}
       </>
     )
   }

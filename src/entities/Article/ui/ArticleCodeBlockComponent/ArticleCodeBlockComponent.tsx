@@ -1,21 +1,23 @@
-import React, { type FC } from 'react'
+import React, { memo, type FC } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
 import cls from './ArticleCodeBlockComponent.module.scss'
-import { useTranslation } from 'react-i18next'
+import { type ArticleCodeBlock } from './../../model/types/article'
+import Code from 'shared/ui/Code/Code'
 
 export interface ArticleCodeBlockComponentProps {
   className?: string
+  block: ArticleCodeBlock
 }
 
 const ArticleCodeBlockComponent: FC<ArticleCodeBlockComponentProps> = ({
   className,
+  block,
 }) => {
-  const { t } = useTranslation()
   return (
-    <div
-      className={classNames(cls.ArticleCodeBlockComponent, {}, [className])}
-    ></div>
+    <div className={classNames(cls.ArticleCodeBlockComponent, {}, [className])}>
+      <Code text={block.code}/>
+    </div>
   )
 }
 
-export default ArticleCodeBlockComponent
+export default memo(ArticleCodeBlockComponent)
