@@ -1042,7 +1042,8 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "roles": "ADMIN"
+      "roles": "ADMIN",
+      "avatar": "https://png.pngtree.com/png-clipart/20200819/ourlarge/pngtree-abstract-sexy-female-avatar-png-image_2326139.jpg"
     },
     {
       "id": "2",
