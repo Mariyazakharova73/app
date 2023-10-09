@@ -58,7 +58,6 @@ const LoginForm: FC<LoginFormProps> = ({ className, onSuccess }) => {
 
   return (
     <DynamicModuleLoader
-      removeAfterUnMount
       reducers={initialReducers}
     >
       <div className={classNames(cls.LoginForm, {}, [className])}>

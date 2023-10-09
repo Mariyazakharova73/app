@@ -17,7 +17,7 @@ export type ReducerList = {
 // Для добавления редюсеров асинхронно
 const DynamicModuleLoader: FC<DynamicModuleLoaderProps> = ({
   children,
-  removeAfterUnMount,
+  removeAfterUnMount = true,
   reducers, // counter, login, user
 }) => {
   const store = useStore() as ReduxStoreWithManager

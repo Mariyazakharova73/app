@@ -1,4 +1,4 @@
-import React, { useEffect, useCallback, type FC } from 'react'
+import React, { useCallback, type FC } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
 import DynamicModuleLoader, {
   type ReducerList,
@@ -22,6 +22,8 @@ import { type Country } from 'entities/Country'
 import Text, { TextTheme } from 'shared/ui/Text/Text'
 import { validateProfileError } from 'entities/Profile/model/types/profile'
 import { useTranslation } from 'react-i18next'
+import { useInitialEffect } from 'shared/lib/hooks/useAppDispatch/useInitialEffect'
+import { useParams } from 'react-router-dom'
 
 export interface ProfilePageProps {
   className?: string
@@ -39,6 +41,7 @@ const ProfilePage: FC<ProfilePageProps> = ({ className }) => {
   const isLoading = useSelector(getProfileIsLoading)
   const readonly = useSelector(getProfileReadOnly)
   const validateErrors = useSelector(getProfileValidateErrors)
+  const { id } = useParams<{ id: string }>()
 
   const validateErrorsTranslates = {
     [validateProfileError.SERVER_ERROR]: t('serverError'),
@@ -48,11 +51,11 @@ const ProfilePage: FC<ProfilePageProps> = ({ className }) => {
     [validateProfileError.NO_DATA]: t('noData'),
   }
 
-  useEffect(() => {
-    if (__PROJECT__ !== 'storybook') {
-      void dispatch(fetchProfileData())
+  useInitialEffect(() => {
+    if (id) {
+      dispatch(fetchProfileData(id))
     }
-  }, [dispatch])
+  })
 
   const onChange = useCallback(
     (value?: string | number, name?: string) => {
@@ -78,7 +81,7 @@ const ProfilePage: FC<ProfilePageProps> = ({ className }) => {
   )
 
   return (
-    <DynamicModuleLoader removeAfterUnMount reducers={initialReducers}>
+    <DynamicModuleLoader reducers={initialReducers}>
       <div className={classNames('', {}, [className])}>
         <ProfilePageHeader />
         {validateErrors?.length &&

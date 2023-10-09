@@ -2,5 +2,7 @@
   "not-found-article": "Article not found",
   "article-error": "There was an error loading the article.",
   "comments": "Comments",
-  "no-comments": "\nNo comments"
+  "no-comments": "\nNo comments",
+  "commentText": "Enter comment text",
+  "sendBtn": "Send"
 }

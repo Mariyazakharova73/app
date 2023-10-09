@@ -126,7 +126,7 @@ const ArticleDetails: FC<ArticleDetailsProps> = ({ className, id }) => {
   }
 
   return (
-    <DynamicModuleLoader reducers={reducers} removeAfterUnMount>
+    <DynamicModuleLoader reducers={reducers}>
       <div className={classNames(cls.ArticleDetails, {}, [className])}>
         {content}
       </div>
